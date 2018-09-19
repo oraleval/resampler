@@ -10,6 +10,7 @@ navigator.mediaDevices.getUserMedia({audio: true})
           bufSize    = 4096,
           microphone = context.createMediaStreamSource(stream),
           processor  = context.createScriptProcessor(bufSize, 1, 1), ;
+          //原采样率context.sampleRate降采样到16000， 单声道， buf大小 bufSize
           res        = new Resampler(context.sampleRate, 16000, 1, bufSize),
           bufferArray= [];
       
